@@ -1,6 +1,7 @@
 package growthcraft.rice;
 
 import growthcraft.rice.common.CommonProxy;
+import growthcraft.rice.common.Init;
 import growthcraft.rice.shared.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -32,7 +33,11 @@ public class GrowthcraftRice {
 
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
+        Init.preInitBlocks();
+        Init.preInitItems();
+        Init.preInitFluids();
 
+        proxy.preInit();
     }
 
     @Mod.EventHandler
